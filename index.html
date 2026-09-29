@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e8895a">
+  <title>Langit Jingga — Vol. 1 Web Reader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sceneCanvas" aria-hidden="true"></canvas>
+
+  <div id="startScreen" class="start-screen">
+    <div class="start-card">
+      <p class="eyebrow">WEB READER</p>
+      <h1>Langit Jingga</h1>
+      <p>Senja, percakapan kecil, dan hal-hal yang tidak pernah selesai dikatakan.</p>
+      <button id="startReading" class="primary-btn">Mulai Membaca</button>
+      <small>Musik mulai setelah tombol ditekan karena aturan autoplay browser.</small>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <button id="menuButton" class="icon-btn" aria-label="Buka daftar isi">☰</button>
+    <div class="brand">Langit Jingga</div>
+    <div class="top-controls">
+      <button id="themeButton" class="icon-btn" aria-label="Ubah tema">◐</button>
+      <button id="settingsButton" class="icon-btn" aria-label="Pengaturan teks">A</button>
+    </div>
+  </header>
+
+  <aside id="toc" class="toc" aria-hidden="true">
+    <div class="toc-head">
+      <div>
+        <p class="eyebrow">DAFTAR ISI</p>
+        <h2>Langit Jingga</h2>
+      </div>
+      <button id="closeToc" class="icon-btn" aria-label="Tutup daftar isi">×</button>
+    </div>
+    <div id="chapterList"></div>
+  </aside>
+
+  <main id="reader" class="reader">
+    <section class="chapter-heading">
+      <p class="eyebrow" id="chapterNumber">BAB 1</p>
+      <h1 id="chapterTitle">Memuat...</h1>
+    </section>
+    <div id="sceneContainer"></div>
+
+    <nav class="chapter-nav" aria-label="Navigasi bab">
+      <button id="prevChapter" class="nav-btn">← Bab Sebelumnya</button>
+      <button id="nextChapter" class="nav-btn">Bab Berikutnya →</button>
+    </nav>
+  </main>
+
+  <div id="textSettings" class="settings-popover" hidden>
+    <label>
+      Ukuran teks
+      <input id="fontSize" type="range" min="16" max="26" value="19">
+    </label>
+  </div>
+
+  <div class="audio-player" id="audioPlayer">
+    <div class="track-info">
+      <span class="music-dot"></span>
+      <div>
+        <strong id="trackTitle">Musik berhenti</strong>
+        <small id="trackMood">Mulai membaca untuk mengaktifkan musik</small>
+      </div>
+    </div>
+    <div class="audio-controls">
+      <button id="audioPlay" class="mini-btn" aria-label="Putar atau jeda">▶</button>
+      <button id="audioMute" class="mini-btn" aria-label="Mute">🔊</button>
+      <label class="volume-label" aria-label="Volume">
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.65">
+      </label>
+    </div>
+  </div>
+
+  <script>window.CHAPTERS = [];</script>
+  <script src="js/scenes.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="data/bab-1.js"></script>
+  <script src="data/bab-2.js"></script>
+  <script src="data/bab-3.js"></script>
+  <script src="data/bab-4.js"></script>
+  <script src="data/bab-5.js"></script>
+  <script src="data/bab-6.js"></script>
+  <script src="data/bab-7.js"></script>
+  <script src="data/bab-8.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

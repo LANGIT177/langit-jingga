@@ -1,0 +1,4 @@
+Langit Jingga Vol. 1 — Hosted build
+Ready for GitHub Pages / Netlify
+Root entry: index.html
+No fetch(): chapter data is loaded with script tags.
